@@ -1,8 +1,12 @@
 ---
 title: Kubernetes Cluster Setup
 date: 2024-08-31
-tags: ["home lab","kubernetes", "tailscale"]
-categories: ["kubernetes"]
+tags:
+  - home-lab
+  - kubernetes
+  - tailscale
+categories:
+  - kubernetes
 author: Sebastian
 showToc: true
 TocOpen: false
@@ -20,15 +24,9 @@ ShowWordCount: true
 ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 cover:
-#   image: <image path/url>
-#   alt: <alt text>
-#   caption: <text>
-#   relative: false
   hidden: true
 editPost:
-#     URL: "https://github.com/<path_to_repo>/content"
-#     Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+  appendFilePath: true
 ---
 ## Overview Kubernetes components
 
