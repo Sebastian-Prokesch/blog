@@ -52,13 +52,11 @@ This post shows a pragmatic pattern that keeps things understandable:
 
 The key idea is simple: a subnet-router node sits in your tailnet and provides routed access into your home VLAN.
 
-```mermaid
-flowchart LR
-  RemoteNode[RemoteNode] -->|TailscaleMesh| Tailnet[Tailnet]
-  Tailnet -->|EncryptedTunnel| SubnetRouterLXC[SubnetRouterLXC]
-  SubnetRouterLXC -->|LANRouting| HomeLANVLAN[HomeLANVLAN]
-  HomeLANVLAN --> Services[LAN_Services]
-```
+Architecture at a glance:
+
+- Tailnet peers (remote nodes/devices) connect to the **subnet-router LXC** over Tailscale.
+- The subnet router forwards traffic into the **home VLAN** for the advertised CIDRs.
+- Home VLAN services remain private; access is controlled via **ACLs** + **home firewalling**.
 
 ### What the subnet router does (and doesn’t)
 
